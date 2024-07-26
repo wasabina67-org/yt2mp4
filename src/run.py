@@ -31,7 +31,9 @@ def main():
             url = f"https://www.youtube.com/watch?v={videoid}"
             retcode = ydl.download([url])
             if retcode != 0:
-                raise RuntimeError()
+                raise RuntimeError(
+                    f"Downloading failed with non-zero return code. ({videoid})"
+                )
 
 
 if __name__ == "__main__":
