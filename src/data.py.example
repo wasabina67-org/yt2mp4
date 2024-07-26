@@ -1,0 +1,54 @@
+yoasobi = "YOASOBI"
+yoasobi_list = [
+    {
+        "id": "ZRtdQ81jPUQ",
+        "metadata": {
+            "title": "アイドル",
+            "artist": yoasobi,
+        },
+    },
+    {
+        "id": "dy90tA3TT1c",
+        "metadata": {
+            "title": "怪物",
+            "artist": yoasobi,
+        },
+    },
+    {
+        "id": "x8VYWazR5mE",
+        "metadata": {
+            "title": "夜に駆ける",
+            "artist": yoasobi,
+        },
+    },
+]
+
+aimyong = "あいみょん"
+aimyong_list = [
+    {
+        "id": "0xSiBpUdW4E",
+        "metadata": {
+            "title": "マリーゴールド",
+            "artist": aimyong,
+        },
+    },
+    {
+        "id": "yOAwvRmVIyo",
+        "metadata": {
+            "title": "裸の心",
+            "artist": aimyong,
+        },
+    },
+    {
+        "id": "pfGI91CFtRg",
+        "metadata": {
+            "title": "ハルノヒ",
+            "artist": aimyong,
+        },
+    },
+]
+
+yt_list = (
+    yoasobi_list
+    + aimyong_list
+)
