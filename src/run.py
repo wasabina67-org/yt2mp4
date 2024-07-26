@@ -1,6 +1,6 @@
 import os
 
-from mutagen.easymp4 import EasyMP4  # noqa
+from mutagen.easymp4 import EasyMP4
 from yt_dlp import YoutubeDL  # type: ignore
 
 from data import yt_list
@@ -10,6 +10,13 @@ ydl_opts = {
     "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]",
     "outtmpl": None,
 }
+
+
+def set_metadata(metadata, mp4_file_path):
+    tags = EasyMP4(mp4_file_path)
+    tags["title"] = metadata["title"]
+    tags["artist"] = metadata["artist"]
+    tags.save()
 
 
 def main():
@@ -34,6 +41,8 @@ def main():
                 raise RuntimeError(
                     f"Downloading failed with non-zero return code. ({videoid})"
                 )
+
+            set_metadata(item["metadata"], mp4_file_path)
 
 
 if __name__ == "__main__":
