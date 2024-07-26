@@ -37,3 +37,7 @@ def validate_yt_list():
         seen_title_artist.add(title_artist)
 
         return True
+
+
+def check_video_deletion():
+    pass
