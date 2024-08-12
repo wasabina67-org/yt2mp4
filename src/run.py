@@ -31,9 +31,9 @@ def main():
         if os.path.isfile(mp4_file_path):
             continue
 
-        url = f"https://www.youtube.com/watch?v={videoid}"
+        url = f"https://i.ytimg.com/vi/{videoid}/hqdefault.jpg"
         if check_video_deletion(url):
-            raise RuntimeError(f"The Video URL returned a 404 status. ({videoid})")
+            raise RuntimeError(f"The Thumbnail Image URL returned a 404 status. ({videoid})")
 
         ydl_opts["outtmpl"] = output_videoid
         with YoutubeDL(ydl_opts) as ydl:
