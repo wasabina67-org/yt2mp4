@@ -4,7 +4,7 @@ from mutagen.easymp4 import EasyMP4
 from yt_dlp import YoutubeDL  # type: ignore
 
 from data import yt_list
-from utils import validate_yt_list
+from utils import check_video_deletion, validate_yt_list
 
 ydl_opts = {
     "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]",
@@ -31,7 +31,8 @@ def main():
         if os.path.isfile(mp4_file_path):
             continue
 
-        # check_video_deletion()
+        url = f"https://www.youtube.com/watch?v={videoid}"
+        check_video_deletion(url)
 
         ydl_opts["outtmpl"] = output_videoid
         with YoutubeDL(ydl_opts) as ydl:
