@@ -1,3 +1,5 @@
+import requests  # type: ignore
+
 from data import yt_list
 
 
@@ -39,5 +41,8 @@ def validate_yt_list():
         return True
 
 
-def check_video_deletion():
-    pass
+def check_video_deletion(url):
+    resp = requests.head(url)
+    if resp.status_code == 404:
+        return True
+    return False
