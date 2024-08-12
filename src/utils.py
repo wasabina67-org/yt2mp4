@@ -1,4 +1,4 @@
-import requests
+import requests  # type: ignore
 
 from data import yt_list
 
