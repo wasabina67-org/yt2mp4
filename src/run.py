@@ -33,7 +33,9 @@ def main():
 
         url = f"https://i.ytimg.com/vi/{videoid}/hqdefault.jpg"
         if check_video_deletion(url):
-            raise RuntimeError(f"The Thumbnail Image URL returned a 404 status. ({videoid})")
+            raise RuntimeError(
+                f"The Thumbnail Image URL returned a 404 status. ({videoid})"
+            )
 
         ydl_opts["outtmpl"] = output_videoid
         with YoutubeDL(ydl_opts) as ydl:
