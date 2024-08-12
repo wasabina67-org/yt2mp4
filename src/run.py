@@ -36,7 +36,6 @@ def main():
 
         ydl_opts["outtmpl"] = output_videoid
         with YoutubeDL(ydl_opts) as ydl:
-            url = f"https://www.youtube.com/watch?v={videoid}"
             retcode = ydl.download([url])
             if retcode != 0:
                 raise RuntimeError(
